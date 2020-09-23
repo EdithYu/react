@@ -4,13 +4,7 @@ import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons'
 import './style/index.scss'
 
 function Header(props) {
-  const props1 = {
-    title: '偏移数据总览', // title名称
-    migrationPercent: '11.5%', // 偏移率
-    comparePercent: '+6%', // 比较
-    migrationDistance: '135km', // 偏移里程
-    totalMigrationDistance: '2135km' // 总里程
-  }
+  const { dataSource } = props
 
   const rowLayout= {
     justify: 'left',
@@ -34,18 +28,18 @@ function Header(props) {
   }
 
   return (
-    <div className='right-wrap'>
-      <div className='header'>{props1.title}</div>
+    <div className='header-wrap'>
+      <div className='header'>{dataSource.title}</div>
       <div className='content'>
         <Row {...rowLayout} >
           <Col {...colLayout} >
             <div className='wrap-LT'>
-              <span>{props1.migrationPercent}</span>
+              <span>{dataSource.migrationPercent}</span>
             </div>
           </Col>
           <Col {...colLayout}>
             <div className='wrap-RT'>
-              <span>{props1.comparePercent}  </span>
+              <span>{dataSource.comparePercent}  </span>
               { arrowIcon(1) }
             </div>
           </Col>
@@ -53,13 +47,13 @@ function Header(props) {
         <Row {...rowLayout}>
           <Col {...colLayout}>
             <div className='wrap-LB'>
-              <span>{props1.migrationDistance}</span>
+              <span>{dataSource.migrationDistance}</span>
               <span className='text'>偏移里程</span>
             </div>
           </Col>
           <Col {...colLayout}>
               <div className='wrap-RB'>
-                <span>{props1.totalMigrationDistance}</span>
+                <span>{dataSource.totalMigrationDistance}</span>
                 <span className='text'>总里程</span>
               </div>
           </Col>
