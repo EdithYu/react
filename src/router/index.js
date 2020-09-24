@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import List from '../page/list'
+import TestList from '../page/testList'
 import App from '../App' 
 
 const RouterConfig = function(props) {
@@ -15,6 +16,7 @@ const RouterConfig = function(props) {
       <Switch>
         <Route path="/" exact component={App} />
         <Route path="/list" exact component={List}/>
+        <Route path="/testlist" exact component={TestList}/>
       </Switch>
     </Router> 
   )
