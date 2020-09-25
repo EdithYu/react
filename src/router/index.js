@@ -6,8 +6,9 @@ import {
   // Link
 } from "react-router-dom";
 
-import List from '../page/list'
 import TestList from '../page/testList'
+import TestLeftList from '../page/testLeftList'
+import TestRightList from '../page/testRightList'
 import App from '../App' 
 
 const RouterConfig = function(props) {
@@ -15,8 +16,9 @@ const RouterConfig = function(props) {
     <Router>
       <Switch>
         <Route path="/" exact component={App} />
-        <Route path="/list" exact component={List}/>
-        <Route path="/testlist" exact component={TestList}/>
+        <Route path="/testlist" exact component={TestList} />
+        <Route path="/testleftlist" exact component={TestLeftList}/>
+        <Route path="/testrightlist" exact component={TestRightList}/>
       </Switch>
     </Router> 
   )
