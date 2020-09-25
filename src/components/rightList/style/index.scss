@@ -181,7 +181,7 @@
                         }
                     }
                     .drop-wrap {
-                        animation: drop-wrap ease 0.5s;
+                        animation: drop-wrap ease-in-out 1s;
                         margin-bottom:-1px;
                         overflow: hidden;
                         display: none;
@@ -273,33 +273,6 @@
             }
         }
     }
-     /*设置动画*/  
-     @keyframes spin{   
-        0%{   
-            transform:rotateY(0deg);
-        }   
-        100%{   
-            transform:rotateY(-90deg)
-        }   
-    }   
-    
-    @keyframes li-spin{   
-        0%{ 
-            transform: translateX(100px);  
-        }   
-        100%{   
-            transform: translateX(0px);  
-        }   
-    } 
-
-    @keyframes turn-li-spin{   
-        0%{ 
-            transform: translateX(100px);  
-        }   
-        100%{   
-            transform: translateX(0px);  
-        }   
-    } 
     @keyframes drop-wrap{   
         0%{ 
             max-height: 0px;
