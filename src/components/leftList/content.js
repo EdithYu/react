@@ -83,7 +83,7 @@ class Content extends React.Component {
     if (val === 0) {
       return ''
      } else {
-      Math.abs(val)
+      return Math.abs(val)
     }
   } 
 
