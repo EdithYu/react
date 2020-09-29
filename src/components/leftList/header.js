@@ -1,18 +1,18 @@
 import React from 'react'
-import { Row, Col} from 'antd'
+import { Row, Col } from 'antd'
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons'
 import './style/index.scss'
 
-const rowLayout= {
+const rowLayout = {
   justify: 'left',
-  align:'bottom',
+  align: 'bottom'
 }
 
 const colLayout = {
-  span: 12,
+  span: 12
 }
 class Header extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       contentFrontName: 'content out-front',
@@ -28,11 +28,11 @@ class Header extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.refresh()
   }
 
-  componentWillReceiveProps(props) {
+  componentWillReceiveProps (props) {
     this.refresh()
   }
 
@@ -40,25 +40,25 @@ class Header extends React.Component {
     val = parseFloat(val)
     if (val > 0) {
       return (
-        <ArrowUpOutlined style={{ fontSize: '16px', color: '#FF4848' }}/>
+        <ArrowUpOutlined style={{ fontSize: '16px', color: '#FF4848' }} />
       )
-    } else if(val< 0) {
+    } else if (val < 0) {
       return (
-        <ArrowDownOutlined style={{ fontSize: '16px', color: '#83FF00' }}/>
+        <ArrowDownOutlined style={{ fontSize: '16px', color: '#83FF00' }} />
       )
     } else {
-      return 
+      return ''
       // (
       //   <ArrowRightOutlined style={{ fontSize: '16px', color: '#bfbfbf' }}/>
       // )
     }
   }
 
-  handleAnimationEndEvent = (e)=> { // 处理动画结束事件
+  handleAnimationEndEvent = (e) => { // 处理动画结束事件
     if (e.target.className === 'spin') {
       this.setState({
         outerName: '',
-        liName:'',
+        liName: '',
         turnDataSource: this.props.dataSource
       })
     }
@@ -71,12 +71,12 @@ class Header extends React.Component {
     })
   }
 
-  createTemplate = (dataSource,contentName,liName) => {
+  createTemplate = (dataSource, contentName, liName) => {
     return (
       <div className={contentName}>
         <div className={liName}>
-          <Row {...rowLayout} >
-            <Col {...colLayout} >
+          <Row {...rowLayout}>
+            <Col {...colLayout}>
               <div className='wrap-LT'>
                 <span>{dataSource.migrationPercent}</span>
               </div>
@@ -84,7 +84,7 @@ class Header extends React.Component {
             <Col {...colLayout}>
               <div className='wrap-RT'>
                 <span>{dataSource.comparePercent}  </span>
-                { this.arrowIcon(dataSource.comparePercent) }
+                {this.arrowIcon(dataSource.comparePercent)}
               </div>
             </Col>
           </Row>
@@ -96,10 +96,10 @@ class Header extends React.Component {
               </div>
             </Col>
             <Col {...colLayout}>
-                <div className='wrap-RB'>
-                  <span>{dataSource.totalMigrationDistance}</span>
-                  <span className='text'>总里程</span>
-                </div>
+              <div className='wrap-RB'>
+                <span>{dataSource.totalMigrationDistance}</span>
+                <span className='text'>总里程</span>
+              </div>
             </Col>
           </Row>
         </div>
@@ -108,18 +108,18 @@ class Header extends React.Component {
   }
 
   render () {
-    const { contentFrontName, contentRightName, turnDataSource, outerName, liName} = this.state
+    const { contentFrontName, contentRightName, turnDataSource, outerName, liName } = this.state
     const { dataSource } = this.props
     return (
       <div className='header-wrap'>
         <div className='header'>{dataSource.title}</div>
-        <div className={outerName} onAnimationEnd = {(e) => {this.handleAnimationEndEvent(e)}}>
-          { this.createTemplate(dataSource,contentRightName,liName)}
-          { this.createTemplate(turnDataSource,contentFrontName,liName)}
+        <div className={outerName} onAnimationEnd={(e) => { this.handleAnimationEndEvent(e) }}>
+          {this.createTemplate(dataSource, contentRightName, liName)}
+          {this.createTemplate(turnDataSource, contentFrontName, liName)}
         </div>
       </div>
     )
   }
-} 
+}
 
 export default Header

@@ -1,33 +1,34 @@
 import React from 'react'
 import { Button } from 'antd'
 import List from '../../components/leftList'
+import { queryAllAreaCarMigrationData } from '../../services/gpsservice'
 
-const content  = (count) => {
-  let list = []
-  for (let i=0; i<count; i++) {
-    list.push({
-      rank: i+1,
-      changeRank: Math.floor((Math.random()*20)) - 10,
-      place: 'loading',
-      percent: 'load',
-      changePercent: '+0%',
-      migrationDistance: '135km', // 偏移里程
-      totalMigrationDistance: '2135km' // 总里程
-    })
-  }
-  return list
-}
+// const content = (count) => {
+//   const list = []
+//   for (let i = 0; i < count; i++) {
+//     list.push({
+//       rank: i + 1,
+//       changeRank: Math.floor((Math.random() * 20)) - 10,
+//       place: 'loading',
+//       percent: 'load',
+//       changePercent: '+0%',
+//       migrationDistance: '135km', // 偏移里程
+//       totalMigrationDistance: '2135km' // 总里程
+//     })
+//   }
+//   return list
+// }
 
-const testData = {
-  header: {
-    title: '偏移数据总览', // title名称
-    migrationPercent: '11.5%', // 偏移率
-    comparePercent: '+6%', // 比较
-    migrationDistance: '135km', // 偏移里程
-    totalMigrationDistance: '2135km' // 总里程
-  },
-  list: content(15)
-}
+// const testData = {
+//   header: {
+//     title: '偏移数据总览', // title名称
+//     migrationPercent: '11.5%', // 偏移率
+//     comparePercent: '+6%', // 比较
+//     migrationDistance: '135km', // 偏移里程
+//     totalMigrationDistance: '2135km' // 总里程
+//   },
+//   list: content(15)
+// }
 
 const test = () => {
   return {
@@ -173,21 +174,31 @@ const test = () => {
         changePercent: '+6%',
         migrationDistance: '135km', // 偏移里程
         totalMigrationDistance: '2135km' // 总里程
-      },
+      }
     ]
   }
 }
 
-class TestLeftList extends React.Component{
+class TestLeftList extends React.Component {
   state = {
     dataSource: test()
   }
 
-  rowClickEvent = (data)=> {
+  componentDidMount () {
+    this.getAllAreaCarMigrationData()
+  }
+
+  getAllAreaCarMigrationData = () => {
+    queryAllAreaCarMigrationData().then((data) => {
+      console.log(data)
+    })
+  }
+
+  rowClickEvent = (data) => {
     console.log(data)
   }
-  
-  test = ()=> {
+
+  handleTest = () => {
     this.setState({
       dataSource: test()
     })
@@ -197,11 +208,11 @@ class TestLeftList extends React.Component{
     const { dataSource } = this.state
     return (
       <div>
-        <List 
-          dataSource = {dataSource}
-          rowClickEvent = {this.rowClickEvent}
+        <List
+          dataSource={dataSource}
+          rowClickEvent={this.rowClickEvent}
         />
-        <Button onClick={this.test} style={{position: 'absolute', left: '500px', top: '100px'}}>测试leftcontent</Button>
+        <Button onClick={this.handleTest} style={{ position: 'absolute', left: '500px', top: '100px' }}>测试leftcontent</Button>
       </div>
     )
   }

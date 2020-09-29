@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 import List from './rightList.js'
 import './style/index.scss'
 
-function RightList(props) {
-  
+function RightList (props) {
   const { dataSource, rowClickEvent } = props
-  
+
   return (
     <div className='big-data-right'>
-      <List dataSource = {dataSource} rowClickEvent={rowClickEvent}/>
+      <List dataSource={dataSource} rowClickEvent={rowClickEvent} />
     </div>
   )
 }

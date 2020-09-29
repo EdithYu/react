@@ -1,33 +1,33 @@
 import React from 'react'
-import { Row, Col, Button} from 'antd'
+import { Row, Col, Button } from 'antd'
 // import { DownloadOutlined } from '@ant-design/icons'
 import './style/index.scss'
 import 'antd/dist/antd.css'
 
-const rowLayout= { // 下拉弹出框的头部
+const rowLayout = { // 下拉弹出框的头部
   justify: 'center',
-  align:'middle',
-  gutter:[16, 16]
+  align: 'middle',
+  gutter: [16, 16]
 }
 
-const listRowLayout= { // 正常列表
+const listRowLayout = { // 正常列表
   justify: 'left',
-  align:'middle',
+  align: 'middle'
 }
 
-const droplistRowLayout= { // 下拉弹出框的列表
+const droplistRowLayout = { // 下拉弹出框的列表
   justify: 'space-between',
-  align:'middle',
+  align: 'middle'
 }
 
 const colLayout = {
-  span: 12,
+  span: 12
 }
 
-let lastEle = undefined
+let lastEle
 
 class RightList extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       contentName: 'content',
@@ -42,41 +42,40 @@ class RightList extends React.Component {
             plateNumber: '苏A23456', // 车牌号
             carMigrationDistance: '45km', // 单个牌照偏移里程
             carTotalMigrationDistance: '675km', // 单个牌照总里程
-            carMigrationPercent: '13', // 单个汽车偏移率
+            carMigrationPercent: '13' // 单个汽车偏移率
           },
           {
             plateNumber: '苏A23456', // 车牌号
             carMigrationDistance: '45km', // 单个牌照偏移里程
             carTotalMigrationDistance: '675km', // 单个牌照总里程
-            carMigrationPercent: '13', // 单个汽车偏移率
+            carMigrationPercent: '13' // 单个汽车偏移率
           },
           {
             plateNumber: '苏A23456', // 车牌号
             carMigrationDistance: '45km', // 单个牌照偏移里程
             carTotalMigrationDistance: '675km', // 单个牌照总里程
-            carMigrationPercent: '13', // 单个汽车偏移率
+            carMigrationPercent: '13' // 单个汽车偏移率
           },
           {
             plateNumber: '苏A23456', // 车牌号
             carMigrationDistance: '45km', // 单个牌照偏移里程
             carTotalMigrationDistance: '675km', // 单个牌照总里程
-            carMigrationPercent: '13', // 单个汽车偏移率
+            carMigrationPercent: '13'// 单个汽车偏移率
           }
         ]
       }
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.refresh()
   }
 
-  componentWillReceiveProps(props) {
+  componentWillReceiveProps (props) {
     this.refresh()
   }
 
   refresh = () => {
-    
   }
 
   handleClickEvent = (e, item) => {
@@ -100,8 +99,8 @@ class RightList extends React.Component {
     }
   }
 
-  createTopTemplate = (dataSource,contentName) => {
-    const { totalCar, totalCompany, workTotalCar ,workTotalCompany} = dataSource
+  createTopTemplate = (dataSource, contentName) => {
+    const { totalCar, totalCompany, workTotalCar, workTotalCompany } = dataSource
     return (
       <div className={contentName}>
         <Row {...rowLayout}>
@@ -112,30 +111,31 @@ class RightList extends React.Component {
             </div>
           </Col>
           <Col {...colLayout}>
-              <div className='wrap-R'>
-                <span>{workTotalCar}<span className='unit'>辆</span> / {workTotalCompany}<span className='unit'>家</span></span>
-                <span className='text'>作业车辆/企业</span>
-              </div>
+            <div className='wrap-R'>
+              <span>{workTotalCar}<span className='unit'>辆</span> / {workTotalCompany}<span className='unit'>家</span></span>
+              <span className='text'>作业车辆/企业</span>
+            </div>
           </Col>
         </Row>
       </div>
     )
   }
 
-  createListTemplate = (sourceData, testData) => { //创建list
+  createListTemplate = (sourceData, testData) => { // 创建list
     const length = sourceData.length
     return (
       sourceData.map((item, index) => {
         return (
-          <li 
+          <li
             className='list-li'
             key={index}
-            onClick={(e) => {this.handleClickEvent(e,item)}}
-            style={{ borderColor: item.areaFlag === 0? '#2CD4F9' : '',marginBottom : index === length-1 ?  '0px' : ''}}>
+            onClick={(e) => { this.handleClickEvent(e, item) }}
+            style={{ borderColor: item.areaFlag === 0 ? '#2CD4F9' : '', marginBottom: index === length - 1 ? '0px' : '' }}
+          >
             <div className='wrap'>
               <Row {...listRowLayout} style={{ height: '100%' }}>
-                <Col span={4}  style={{ height: '100%' }}>
-                  <div className='rank' style={{ background: this.getRankBackground(item.rank)}}>
+                <Col span={4} style={{ height: '100%' }}>
+                  <div className='rank' style={{ background: this.getRankBackground(item.rank) }}>
                     <span className='rank-text'>{item.rank}</span>
                   </div>
                 </Col>
@@ -161,9 +161,9 @@ class RightList extends React.Component {
             <div className='drop-wrap'>
               <div>
                 <Row {...rowLayout} style={{ height: '100%' }}>
-                  <Col >
+                  <Col>
                     <div className='wrap-LL'>
-                        <span>{testData.migrationDistance}</span>
+                      <span>{testData.migrationDistance}</span>
                     </div>
                   </Col>
                   <Col>
@@ -176,9 +176,9 @@ class RightList extends React.Component {
                     <div className='wrap-M'>/</div>
                   </Col>
                   <Col>
-                      <div className='wrap-MR'>
-                        <span>{testData.totalMigrationDistance}</span>
-                      </div>
+                    <div className='wrap-MR'>
+                      <span>{testData.totalMigrationDistance}</span>
+                    </div>
                   </Col>
                   <Col>
                     <div className='wrap-RR'>
@@ -188,25 +188,24 @@ class RightList extends React.Component {
                   </Col>
                 </Row>
               </div>
-              { this.createDropListTemplate(testData.listData,item.areaFlag) }
+              {this.createDropListTemplate(testData.listData, item.areaFlag)}
             </div>
           </li>
         )
-      }) 
+      })
     )
   }
 
-  createDropListTemplate = (sourceData,areaFlag) => {
+  createDropListTemplate = (sourceData, areaFlag) => {
     // const length = sourceData.length
     return (
       sourceData.map((item, index, length) => {
-
         return (
-          <div className='droplist-li' key={index} style={{borderBottomColor: areaFlag ? '' : '#2CD4F9'}}>
+          <div className='droplist-li' key={index} style={{ borderBottomColor: areaFlag ? '' : '#2CD4F9' }}>
             <Row {...droplistRowLayout} style={{ height: '100%' }}>
-              <Col >
+              <Col>
                 <div className='L'>
-                    <span>{item.plateNumber}</span>
+                  <span>{item.plateNumber}</span>
                 </div>
               </Col>
               <Col>
@@ -230,31 +229,31 @@ class RightList extends React.Component {
   }
 
   render () {
-    const { contentName, size ,btnTextClassName, otherBtnTextClassName, testData} = this.state
+    const { contentName, btnTextClassName, otherBtnTextClassName, testData } = this.state
     const { list, header } = this.props.dataSource
     return (
       <div>
         <div className='header-wrap'>
           <div className='header'>{header.title}</div>
-          { this.createTopTemplate(header,contentName)}
+          {this.createTopTemplate(header, contentName)}
         </div>
         <div className='content-wrap'>
           <div className='header'>
-            <div >运输企业偏移率排名</div>
+            <div>运输企业偏移率排名</div>
             <div className='btn-wrap'>
-              <Button type='primary' shape='round' size='small' className= {otherBtnTextClassName}>以车辆数排名</Button>
-              <Button type='primary' shape='round' size='small' className= {btnTextClassName}>以偏移率排名</Button>
+              <Button type='primary' shape='round' size='small' className={otherBtnTextClassName}>以车辆数排名</Button>
+              <Button type='primary' shape='round' size='small' className={btnTextClassName}>以偏移率排名</Button>
             </div>
           </div>
           <div className='list-wrap'>
             <ul className='list'>
-              { this.createListTemplate(list, testData)}  
+              {this.createListTemplate(list, testData)}
             </ul>
           </div>
         </div>
       </div>
     )
   }
-} 
+}
 
 export default RightList

@@ -6,6 +6,9 @@
     min-width: 396px;
     width: 20%;
     font-family: PingFangSC-Medium, PingFang SC;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     .header-wrap {
         position: relative;
         height: 259px;

@@ -4,14 +4,13 @@ import Header from './header.js'
 import Content from './content.js'
 import './style/index.scss'
 
-function LeftList(props) {
-  
+function LeftList (props) {
   const { dataSource, rowClickEvent } = props
-  
+
   return (
     <div className='big-data-left'>
-      <Header dataSource = {dataSource.header} />
-      <Content dataSource = {dataSource.list} rowClickEvent={rowClickEvent}/>
+      <Header dataSource={dataSource.header} />
+      <Content dataSource={dataSource.list} rowClickEvent={rowClickEvent} />
     </div>
   )
 }

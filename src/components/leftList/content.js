@@ -1,22 +1,22 @@
 import React from 'react'
 import { Row, Col } from 'antd'
-import { ArrowDownOutlined, ArrowUpOutlined, ArrowRightOutlined } from '@ant-design/icons'
+import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons'
 import './style/index.scss'
 
-const rowLayout= {
+const rowLayout = {
   justify: 'center',
-  align:'middle',
+  align: 'middle'
 }
 
 const colLayout = {
-  span: 12,
+  span: 12
 }
 
-let lastEle = undefined
+let lastEle
 
-const content  = (count) => {
-  let list = []
-  for (let i=0; i<count; i++) {
+const content = (count) => {
+  const list = []
+  for (let i = 0; i < count; i++) {
     list.push({
       rank: 1,
       changeRank: -4,
@@ -31,8 +31,7 @@ const content  = (count) => {
 }
 
 class Content extends React.Component {
-
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.props = props
     this.state = {
@@ -44,15 +43,15 @@ class Content extends React.Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.refresh()
   }
 
-  componentWillReceiveProps(props) {
+  componentWillReceiveProps (props) {
     this.refresh()
   }
 
-  handleClickEvent = (e,item) => {
+  handleClickEvent = (e, item) => {
     if (lastEle) {
       lastEle.style.height = '0px'
     }
@@ -65,14 +64,14 @@ class Content extends React.Component {
     val = parseInt(val)
     if (val > 0) {
       return (
-        <ArrowUpOutlined style={{ fontSize: '12px', color: '#FF4848' }}/>
+        <ArrowUpOutlined style={{ fontSize: '12px', color: '#FF4848' }} />
       )
-    } else if(val< 0) {
+    } else if (val < 0) {
       return (
-        <ArrowDownOutlined style={{ fontSize: '12px', color: '#83FF00' }}/>
+        <ArrowDownOutlined style={{ fontSize: '12px', color: '#83FF00' }} />
       )
     } else {
-      return 
+      return ''
       // (
       //   <ArrowRightOutlined style={{ fontSize: '12px', color: '#bfbfbf' }}/>
       // )
@@ -82,10 +81,10 @@ class Content extends React.Component {
   changeRankText = (val) => { // 上升或下降箭头
     if (val === 0) {
       return ''
-     } else {
+    } else {
       return Math.abs(val)
     }
-  } 
+  }
 
   handleAnimationStartEvent = (e) => {
     // if (e.target.className === 'list-li turn-li-spin') {
@@ -93,7 +92,7 @@ class Content extends React.Component {
     // }
   }
 
-  handleAnimationEndEvent = (e)=> { // 处理动画结束事件
+  handleAnimationEndEvent = (e) => { // 处理动画结束事件
     if (e.target.className === 'list-wrap spin') {
       this.setState({
         listWrapName: 'list-wrap',
@@ -108,15 +107,15 @@ class Content extends React.Component {
     // }
   }
 
-  createListTemplate = (sourceData,name) => { //创建list
+  createListTemplate = (sourceData, name) => { // 创建list
     return (
       sourceData.map((item, index) => {
         return (
-          <li className={name} key={index} onClick={(e) => {this.handleClickEvent(e,item)}} style={{ animationDelay: (0.15*index + 's')}}>
+          <li className={name} key={index} onClick={(e) => { this.handleClickEvent(e, item) }} style={{ animationDelay: (0.15 * index + 's') }}>
             <div className='wrap'>
               <Row {...rowLayout} style={{ height: '100%' }}>
-                <Col span={4} >
-                  <div className='rank' style={{ background: (index < 3) ? '' : 'none'}}>
+                <Col span={4}>
+                  <div className='rank' style={{ background: (index < 3) ? '' : 'none' }}>
                     <span className='rank-text'>{item.rank}</span>
                     <span className='change-rank'>{this.arrowIcon(item.changeRank)}{this.changeRankText(item.changeRank)}</span>
                   </div>
@@ -148,16 +147,16 @@ class Content extends React.Component {
                   </div>
                 </Col>
                 <Col {...colLayout}>
-                    <div className='wrap-RB'>
-                      <span>{item.totalMigrationDistance}</span>
-                      <span className='text'>总里程</span>
-                    </div>
+                  <div className='wrap-RB'>
+                    <span>{item.totalMigrationDistance}</span>
+                    <span className='text'>总里程</span>
+                  </div>
                 </Col>
               </Row>
             </div>
           </li>
         )
-      }) 
+      })
     )
   }
 
@@ -169,7 +168,7 @@ class Content extends React.Component {
    */
   toggleEles = (dataSource, name, innername) => {
     return (
-      <ul className={ name } >
+      <ul className={name}>
         {this.createListTemplate(dataSource, innername)}
       </ul>
     )
@@ -186,20 +185,20 @@ class Content extends React.Component {
   }
 
   render () {
-    const { listWrapName, listLiName, listRightName, listFrontName,turnDataSource, turnlistLiName } = this.state
+    const { listWrapName, listLiName, listRightName, listFrontName, turnDataSource, turnlistLiName } = this.state
     const { dataSource } = this.props
     return (
-      <div 
-        className={ listWrapName } 
-        onAnimationEnd = {(e) => {this.handleAnimationEndEvent(e)}}
-        onAnimationStart = {(e) => {this.handleAnimationStartEvent(e)}}
-        onAnimationIteration = {(e) => {this.handleAnimationIterationEvent(e)}}
+      <div
+        className={listWrapName}
+        onAnimationEnd={(e) => { this.handleAnimationEndEvent(e) }}
+        onAnimationStart={(e) => { this.handleAnimationStartEvent(e) }}
+        onAnimationIteration={(e) => { this.handleAnimationIterationEvent(e) }}
       >
-        { this.toggleEles(dataSource,listRightName,listLiName) }
-        { this.toggleEles(turnDataSource,listFrontName,turnlistLiName) }
+        {this.toggleEles(dataSource, listRightName, listLiName)}
+        {this.toggleEles(turnDataSource, listFrontName, turnlistLiName)}
       </div>
     )
-  } 
-} 
+  }
+}
 
 export default Content
