@@ -102,79 +102,79 @@ const test = () => {
         changePercent: '+6%',
         migrationDistance: '135km', // 偏移里程
         totalMigrationDistance: '2135km' // 总里程
-      },
-      {
-        rank: 8,
-        changeRank: 4,
-        place: '福田区',
-        percent: '37%',
-        changePercent: '+6%',
-        migrationDistance: '135km', // 偏移里程
-        totalMigrationDistance: '2135km' // 总里程
-      },
-      {
-        rank: 9,
-        changeRank: 4,
-        place: '福田区',
-        percent: '37%',
-        changePercent: '+6%',
-        migrationDistance: '135km', // 偏移里程
-        totalMigrationDistance: '2135km' // 总里程
-      },
-      {
-        rank: 10,
-        changeRank: 4,
-        place: '福田区',
-        percent: '37%',
-        changePercent: '+6%',
-        migrationDistance: '135km', // 偏移里程
-        totalMigrationDistance: '2135km' // 总里程
-      },
-      {
-        rank: 11,
-        changeRank: -4,
-        place: '福田区',
-        percent: '37%',
-        changePercent: '+6%',
-        migrationDistance: '135km', // 偏移里程
-        totalMigrationDistance: '2135km' // 总里程
-      },
-      {
-        rank: 12,
-        changeRank: 4,
-        place: '福田区',
-        percent: '37%',
-        changePercent: '+6%',
-        migrationDistance: '135km', // 偏移里程
-        totalMigrationDistance: '2135km' // 总里程
-      },
-      {
-        rank: 13,
-        changeRank: -4,
-        place: '福田区',
-        percent: '37%',
-        changePercent: '+6%',
-        migrationDistance: '135km', // 偏移里程
-        totalMigrationDistance: '2135km' // 总里程
-      },
-      {
-        rank: 14,
-        changeRank: 4,
-        place: '福田区',
-        percent: '37%',
-        changePercent: '+6%',
-        migrationDistance: '135km', // 偏移里程
-        totalMigrationDistance: '2135km' // 总里程
-      },
-      {
-        rank: 15,
-        changeRank: 4,
-        place: '福田区',
-        percent: '37%',
-        changePercent: '+6%',
-        migrationDistance: '135km', // 偏移里程
-        totalMigrationDistance: '2135km' // 总里程
       }
+      // {
+      //   rank: 8,
+      //   changeRank: 4,
+      //   place: '福田区',
+      //   percent: '37%',
+      //   changePercent: '+6%',
+      //   migrationDistance: '135km', // 偏移里程
+      //   totalMigrationDistance: '2135km' // 总里程
+      // },
+      // {
+      //   rank: 9,
+      //   changeRank: 4,
+      //   place: '福田区',
+      //   percent: '37%',
+      //   changePercent: '+6%',
+      //   migrationDistance: '135km', // 偏移里程
+      //   totalMigrationDistance: '2135km' // 总里程
+      // },
+      // {
+      //   rank: 10,
+      //   changeRank: 4,
+      //   place: '福田区',
+      //   percent: '37%',
+      //   changePercent: '+6%',
+      //   migrationDistance: '135km', // 偏移里程
+      //   totalMigrationDistance: '2135km' // 总里程
+      // },
+      // {
+      //   rank: 11,
+      //   changeRank: -4,
+      //   place: '福田区',
+      //   percent: '37%',
+      //   changePercent: '+6%',
+      //   migrationDistance: '135km', // 偏移里程
+      //   totalMigrationDistance: '2135km' // 总里程
+      // },
+      // {
+      //   rank: 12,
+      //   changeRank: 4,
+      //   place: '福田区',
+      //   percent: '37%',
+      //   changePercent: '+6%',
+      //   migrationDistance: '135km', // 偏移里程
+      //   totalMigrationDistance: '2135km' // 总里程
+      // },
+      // {
+      //   rank: 13,
+      //   changeRank: -4,
+      //   place: '福田区',
+      //   percent: '37%',
+      //   changePercent: '+6%',
+      //   migrationDistance: '135km', // 偏移里程
+      //   totalMigrationDistance: '2135km' // 总里程
+      // },
+      // {
+      //   rank: 14,
+      //   changeRank: 4,
+      //   place: '福田区',
+      //   percent: '37%',
+      //   changePercent: '+6%',
+      //   migrationDistance: '135km', // 偏移里程
+      //   totalMigrationDistance: '2135km' // 总里程
+      // },
+      // {
+      //   rank: 15,
+      //   changeRank: 4,
+      //   place: '福田区',
+      //   percent: '37%',
+      //   changePercent: '+6%',
+      //   migrationDistance: '135km', // 偏移里程
+      //   totalMigrationDistance: '2135km' // 总里程
+      // }
     ]
   }
 }

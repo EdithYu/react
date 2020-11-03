@@ -39,7 +39,7 @@ class Content extends React.Component {
       listLiName: 'list-li',
       listRightName: 'list out-right',
       listFrontName: 'list out-front',
-      turnDataSource: content(15)
+      turnDataSource: content(7)
     }
   }
 
@@ -178,7 +178,7 @@ class Content extends React.Component {
     const { listFrontName, listRightName } = this.state
     document.getElementsByClassName(listRightName)[0].scrollTop = document.getElementsByClassName(listFrontName)[0].scrollTop
     this.setState({
-      listWrapName: 'list-wrap spin',
+      listWrapName: 'list-wrap',
       listLiName: 'list-li li-spin',
       turnlistLiName: 'list-li turn-li-spin'
     })

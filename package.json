@@ -24,8 +24,7 @@
     "eject": "react-scripts eject"
   },
   "standard": {
-    "ignore": [
-    ],
+    "ignore": [],
     "parser": "babel-eslint"
   },
   "eslintConfig": {
@@ -42,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.3"
   }
 }
