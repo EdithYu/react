@@ -16,7 +16,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
-  "proxy": "http://192.168.180.185:9010",
   "scripts": {
     "start": "set PORT=3002 && react-scripts start",
     "build": "react-scripts build",
@@ -25,7 +24,8 @@
   },
   "standard": {
     "ignore": [],
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "enable": false
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,9 +41,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.3"
   }
 }

@@ -10,8 +10,6 @@ import TestList from '../page/testList'
 import TestLeftList from '../page/testLeftList'
 import TestRightList from '../page/testRightList'
 import TestVirtualTable from '../page/testVirtualTable'
-// import BMap from '../components/map'
-import Calculator from '../components/calculator'
 
 import App from '../App'
 
@@ -24,8 +22,6 @@ const RouterConfig = function (props) {
         <Route path='/testleftlist' exact component={TestLeftList} />
         <Route path='/testrightlist' exact component={TestRightList} />
         <Route path='/testVirtualTable' exact component={TestVirtualTable} />
-        <Route path='/testCalculator' exact component={Calculator} />
-        {/* <Route path='/map' exact component={BMap} /> */}
       </Switch>
     </Router>
   )
