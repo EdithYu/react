@@ -9,12 +9,15 @@
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.6.5",
     "axios": "^0.20.0",
+    "node-sass": "^4.14.1",
     "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-window": "^1.8.6"
   },
   "scripts": {
     "start": "set PORT=3002 && react-scripts start",
@@ -41,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.7.0",
+    "sass-loader": "^10.1.0"
   }
 }
