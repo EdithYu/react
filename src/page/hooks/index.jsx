@@ -6,7 +6,6 @@ function Hooks() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-      debugger
     // Update the document title using the browser API
     document.title = `You clicked ${count} times`;
     setCount(100)
