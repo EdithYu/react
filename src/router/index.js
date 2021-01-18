@@ -11,6 +11,8 @@ import TestLeftList from '../page/testLeftList'
 import TestRightList from '../page/testRightList'
 import TestVirtualTable from '../page/testVirtualTable'
 import Hooks from '../page/hooks'
+import DragList from '../page/dragList'
+import DragList2 from '../page/dragList2'
 
 import App from '../App'
 
@@ -24,6 +26,8 @@ const RouterConfig = function (props) {
         <Route path='/testrightlist' exact component={TestRightList} />
         <Route path='/testVirtualTable' exact component={TestVirtualTable} />
         <Route path='/hooks' exact component={Hooks} />
+        <Route path='/draglist' exact component={DragList} />
+        <Route path='/draglist2' exact component={DragList2} />
       </Switch>
     </Router>
   )
