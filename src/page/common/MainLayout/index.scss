@@ -1,0 +1,15 @@
+.main-layout {
+    .main-layout-header {
+        color: #FFFFFF;
+        background-color: #40a9ff;
+        font-size: 24px;
+    }
+    .main-layout-content {
+        min-height: calc(100% - 64px);
+        position: absolute;
+        top: 64px;
+        left: 0px;
+        width: 100%;
+        background-color: #f5f5f5;
+    }
+}

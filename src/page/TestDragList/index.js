@@ -1,6 +1,8 @@
 import React from 'react'
-import { VirtualTable } from '@/components'
-function testVirtualTable () {
+import { DragList } from '@/components'
+import DragIcon from '@/assets/imgs/drag.svg'
+import './index.scss'
+function TestDragList () {
   const columns = [
     {
       title: 'A',
@@ -39,15 +41,21 @@ function testVirtualTable () {
     }),
   );
   return (
-    <VirtualTable
-      columns={columns}
-      dataSource={data}
-      scroll={{
-        y: 800,
-        x: '100vw',
-      }}
-    />
+    <ul className='draglist'>
+        {
+            data.map((item, index) => {
+                return (
+                    <li>
+                        {item.title}
+                        <DragList>
+                            <img src={DragIcon} className='img'></img>
+                        </DragList>
+                    </li>
+                )
+            })
+        }
+    </ul>
   )
 }
 
-export default testVirtualTable
+export default TestDragList

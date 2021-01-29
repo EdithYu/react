@@ -1,0 +1,35 @@
+.ey-contraction-box {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    bottom: 100px;
+    display: flex;
+    align-items: center;
+    .ey-contraction-box-children {
+        width: 400px;
+        background-color: cornflowerblue;
+        height: 100%;
+        transition: width 0.5s ease-in-out;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+.ey-contraction-box2 {
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    bottom: 100px;
+    display: flex;
+    .ey-contraction-box-children {
+        width: 400px;
+        background-color: cornflowerblue;
+        height: 100%;
+        transition: all 0.5s ease-in-out;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .control-node {
+        position: relative;
+        right: 54.75px;
+    }
+}
