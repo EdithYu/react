@@ -8,5 +8,10 @@ export default [
         url: "/testvirtualtable",
         resource: require('@/assets/gif/testvirtualtable.gif'),
         text: '无限滚动'
+    },
+    {
+        url: "/testvideo",
+        resource: require('@/assets/gif/testvideo.gif'),
+        text: '视频播放'
     }
 ]

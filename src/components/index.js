@@ -1,5 +1,9 @@
 import ContractionBox from "./ContractionBox";
 import VirtualTable from "./VirtualTable";
-import DragList from "./DragList/index.tsx";
+import Video from "./Video";
 
-export { ContractionBox, VirtualTable, DragList };
+export { 
+    ContractionBox, 
+    VirtualTable, 
+    Video 
+};

@@ -10,9 +10,7 @@ import TestContractionBox from '@/page/TestContractionBox'
 import Home from '@/page/Home'
 import NoMatch from '@/page/common/NoMatch'
 import TestVirtualTable from '../page/TestVirtualTable'
-import TestDragList from '../page/TestDragList'
-
-
+import TestVideo from '../page/TestVideo'
 
 const RouterConfig = function () {
   return (
@@ -21,7 +19,7 @@ const RouterConfig = function () {
           <Route path='/' exact component={Home} />
           <Route path='/testcontractionbox' exact component={TestContractionBox} />
           <Route path='/testvirtualtable' exact component={TestVirtualTable} />
-          <Route path='/testdraglist' exact component={TestDragList} />
+          <Route path='/testvideo' exact component={TestVideo} />
           <Route path="*" component={NoMatch}></Route>
       </Switch>
     </Router>
