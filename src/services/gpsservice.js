@@ -23,4 +23,3 @@ export async function queryCarAndCompanyData (params) { // 根据区域查询区
     params: params
   })
 }
-

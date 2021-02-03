@@ -81,7 +81,7 @@
   "standard": {
     "ignore": [],
     "parser": "babel-eslint",
-    "enable": false
+    "enable": true
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -103,6 +103,7 @@
     "redux-devtools": "^3.7.0",
     "sass-loader": "^10.1.0",
     "source-map-loader": "^2.0.0",
+    "standard": "^16.0.3",
     "typescript": "^4.1.3",
     "video.js": "^7.10.2"
   },

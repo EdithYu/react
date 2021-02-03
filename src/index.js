@@ -8,7 +8,7 @@ import MainLayout from '@/page/common/MainLayout'
 ReactDOM.render(
   <React.StrictMode>
     <MainLayout>
-      <RouterConfig />  
+      <RouterConfig />
     </MainLayout>
   </React.StrictMode>,
   document.getElementById('root')

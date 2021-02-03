@@ -4,47 +4,47 @@ function testVirtualTable () {
   const columns = [
     {
       title: 'A',
-      dataIndex: 'key',
+      dataIndex: 'key'
       // width: 150,
     },
     {
       title: 'B',
-      dataIndex: 'key',
+      dataIndex: 'key'
     },
     {
       title: 'C',
-      dataIndex: 'key',
+      dataIndex: 'key'
     },
     {
       title: 'D',
-      dataIndex: 'key',
+      dataIndex: 'key'
     },
     {
       title: 'E',
-      dataIndex: 'key',
+      dataIndex: 'key'
       // width: 200,
     },
     {
       title: 'F',
-      dataIndex: 'key',
+      dataIndex: 'key'
       // width: 100,
-    },
-  ];
+    }
+  ]
   const data = Array.from(
     {
-      length: 1000,
+      length: 1000
     },
     (_, key) => ({
-      key,
-    }),
-  );
+      key
+    })
+  )
   return (
     <VirtualTable
       columns={columns}
       dataSource={data}
       scroll={{
         y: 800,
-        x: '100vw',
+        x: '100vw'
       }}
     />
   )

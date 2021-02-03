@@ -1,10 +1,9 @@
-import React from 'react';
-import { Layout } from 'antd';
+import React from 'react'
+import { Layout } from 'antd'
 import './index.scss'
-const { Header, Content } = Layout;
+const { Header, Content } = Layout
 
-function MainLayout(props) {
-  
+function MainLayout (props) {
   return (
     <Layout className='main-layout'>
       <Header className='main-layout-header'>
@@ -15,7 +14,7 @@ function MainLayout(props) {
       </Content>
       {/* <Footer>Footer</Footer> */}
     </Layout>
-  );
+  )
 }
 
 export default MainLayout

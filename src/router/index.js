@@ -16,11 +16,11 @@ const RouterConfig = function () {
   return (
     <Router>
       <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/testcontractionbox' exact component={TestContractionBox} />
-          <Route path='/testvirtualtable' exact component={TestVirtualTable} />
-          <Route path='/testvideo' exact component={TestVideo} />
-          <Route path="*" component={NoMatch}></Route>
+        <Route path='/' exact component={Home} />
+        <Route path='/testcontractionbox' exact component={TestContractionBox} />
+        <Route path='/testvirtualtable' exact component={TestVirtualTable} />
+        <Route path='/testvideo' exact component={TestVideo} />
+        <Route path='*' component={NoMatch} />
       </Switch>
     </Router>
   )

@@ -20,12 +20,12 @@ class ContractionBox extends React.Component {
     const { wrapClassName } = this.props
     return (
       <div className={wrapClassName}>
-          {
-            this.props.children
-          }
-          {
-            this.props.controlNode
-          }
+        {
+          this.props.children
+        }
+        {
+          this.props.controlNode
+        }
       </div>
     )
   }
