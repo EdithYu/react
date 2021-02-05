@@ -4,7 +4,8 @@ import './index.scss'
 
 class ContractionBox extends React.Component {
   static propTypes = {
-    type: PropTypes.string
+    type: PropTypes.string.isRequired,
+    a: PropTypes.string
   }
 
   static defaultProps = {

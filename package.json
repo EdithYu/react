@@ -1,7 +1,7 @@
 {
   "name": "react-demo",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
     "@babel/core": "7.9.0",
@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
+    "@zqyu/x-design": "^1.0.5",
     "antd": "^4.6.5",
     "axios": "^0.20.0",
     "babel-eslint": "10.1.0",
@@ -50,6 +51,7 @@
     "postcss-normalize": "8.0.1",
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "4.0.1",
+    "prop-types": "^15.7.2",
     "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
@@ -76,10 +78,14 @@
   "scripts": {
     "start": "set PORT=3002 && node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "complie": "node scripts/test.js"
   },
   "standard": {
-    "ignore": [],
+    "ignore": [
+      "/config/",
+      "/scripts/"
+    ],
     "parser": "babel-eslint",
     "enable": true
   },

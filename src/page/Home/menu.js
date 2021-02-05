@@ -13,5 +13,10 @@ export default [
     url: '/testvideo',
     resource: require('@/assets/gif/testvideo.gif'),
     text: '视频播放'
+  },
+  {
+    url: '/testimagelist',
+    resource: require('@/assets/gif/testimagelist.gif'),
+    text: '图片列表'
   }
 ]

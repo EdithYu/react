@@ -4,17 +4,18 @@ import VideoLib from 'video.js'
 import 'video.js/dist/video-js.css'
 import './index.scss'
 
+Video.defaultProps = {
+  width: 400,
+  height: 436
+}
+
 Video.propTypes = {
   id: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  a: PropTypes.string.isRequired,
   poster: PropTypes.string,
-  width: PropTypes.number || PropTypes.string,
-  height: PropTypes.number || PropTypes.string
-}
-
-Video.defaultProps = {
-  width: 840,
-  height: 436
+  width: PropTypes.number,
+  height: PropTypes.number
 }
 
 function Video (props) {

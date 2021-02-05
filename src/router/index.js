@@ -11,6 +11,8 @@ import Home from '@/page/Home'
 import NoMatch from '@/page/common/NoMatch'
 import TestVirtualTable from '../page/TestVirtualTable'
 import TestVideo from '../page/TestVideo'
+import TestImageList from '../page/TestImageList'
+import TestPlayer from '../page/TestPlayer'
 
 const RouterConfig = function () {
   return (
@@ -20,6 +22,8 @@ const RouterConfig = function () {
         <Route path='/testcontractionbox' exact component={TestContractionBox} />
         <Route path='/testvirtualtable' exact component={TestVirtualTable} />
         <Route path='/testvideo' exact component={TestVideo} />
+        <Route path='/testimagelist' exact component={TestImageList} />
+        <Route path='/testplayer' exact component={TestPlayer} />
         <Route path='*' component={NoMatch} />
       </Switch>
     </Router>
