@@ -39,7 +39,7 @@ function ImageList (props) {
 
   const handleClickEvent = (index, item) => {
     setSelectedIndex(index)
-    props.handleClickEvent(item)
+    props.handleClickEvent(item, index)
   }
 
   const getShowData = () => {
