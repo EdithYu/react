@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import 'video.js/dist/video-js.css'
 import './index.scss'
 import 'video-react/dist/video-react.css'
 import { Player } from 'video-react'
 
 Video.defaultProps = {
   width: 400,
-  height: 436
+  height: 300
 }
 
 Video.propTypes = {

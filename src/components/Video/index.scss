@@ -1,34 +1,21 @@
 .video-content {
-    .vjs-paused .vjs-big-play-button,
-    .vjs-paused.vjs-has-started .vjs-big-play-button {
-        display: block;
-    }
-    
-    .video-js .vjs-big-play-button{
-        font-size: 2.5em;
-        line-height: 2.3em;
-        height: 2.5em;
-        width: 2.5em;
-        -webkit-border-radius: 2.5em;
-        -moz-border-radius: 2.5em;
-        border-radius: 2.5em;
-        background-color: #73859f;
-        background-color: rgba(115,133,159,.5);
-        border-width: 0.15em;
-        margin-top: -1.25em;
-        margin-left: -1.75em;
-    }
-    /* 中间的播放箭头 */
-    .vjs-big-play-button .vjs-icon-placeholder {
-        font-size: 1.63em;
-    }
-    /* 加载圆圈 */
-    .vjs-loading-spinner {
-        font-size: 2.5em;
-        width: 2em;
+    .video-react .video-react-big-play-button{
+        font-size: 3em;
+        line-height: 2em;
         height: 2em;
-        border-radius: 1em;
-        margin-top: -1em;
-        margin-left: -1.5em;
+        width: 2em;
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 0;
+        cursor: pointer;
+        opacity: 1;
+        border: 0.06666em solid #fff;
+        background-color: rgba(43, 51, 63, 0.7);
+        transition: all 0.4s;
+        border-radius: 124px;
+        margin-top: 20%;
+        margin-left: 40%;
     }
 }

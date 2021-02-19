@@ -3,13 +3,11 @@ import './index.scss'
 import PropTypes from 'prop-types'
 import ImageList from '../ImageList'
 import Video from '../Video'
+import { Image } from 'antd'
 
 Player.propTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
   data: PropTypes.array,
-  number: PropTypes.number,
-  handleClickEvent: PropTypes.func
+  number: PropTypes.number
 }
 
 Player.defaultProps = {
@@ -18,9 +16,10 @@ Player.defaultProps = {
 function Player (props) {
   const [currentUrl, setCurrentUrl] = useState('')
   const [currentType, setcurrentType] = useState(1)
-  const { width, height, poster, data, number } = props
+  const { data, number } = props
 
   const handleClickEvent = (data) => {
+    setcurrentType(data.type)
     setcurrentType(data.type)
     setCurrentUrl(data.resourceUrl)
   }
@@ -30,12 +29,9 @@ function Player (props) {
       {
         currentType === 1
           ? <Video
-              width={width}
-              height={height}
-              poster={poster}
               src={currentUrl}
             />
-          : <img src={currentUrl} alt='加载中' className='image' />
+          : <Image src={currentUrl} alt='加载中' className='image' height={280} />
       }
       <ImageList
         className='image-list'

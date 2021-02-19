@@ -1,7 +1,6 @@
 | 属性   | 说明         | 类型    | 默认值 |
 | ------ | ------------ | ------- | ------ |
-| id     | 唯一id标识   | Boolean | 必填   |
-| url    | 资源路径     | String  | 必填   |
+| src    | 资源路径     | String  | 必填   |
 | poster | 封面资源地址 | String  | 无     |
 | width  | 宽度         | Number  | 840    |
 | height | 高度         | Number  | 436    |
@@ -15,11 +14,9 @@ import { Video } from '@/components'
 function TestVideo (props) {
   return (
    <Video 
-    id={'myvideo'}
     width={300}
     height={500}
-    url={'https://video.shipin520.com/videos/80/20/03/b_WCY7kPq4fII71556802003_10s.mp4'}
-    type={'video/mp4'}
+    src={'https://video.shipin520.com/videos/80/20/03/b_WCY7kPq4fII71556802003_10s.mp4'}
    />
   )
 }

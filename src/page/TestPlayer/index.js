@@ -1,6 +1,5 @@
 import React from 'react'
 import Player from '@/components/Player'
-import 'video-react/dist/video-react.css'
 
 function TestPlayer () {
   const data = [
